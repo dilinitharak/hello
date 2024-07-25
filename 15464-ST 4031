@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+
 # Load the data
 file_path ='C:\\Users\\Dilini\\Desktop\\HASU Historical Data(2).csv'
 data = pd.read_csv(file_path)
@@ -52,7 +53,7 @@ simulated_paths = np.zeros((n_days, n_simulations))
 simulated_paths[0] = last_price
 for t in range(1, n_days):
     Z = np.random.standard_normal(n_simulations)
-    simulated_paths[t] = simulated_paths[t-1] * np.exp((mu_GB - 0.5 * sigma**2) * dt + sigma * np.sqrt(dt) * Z)
+    simulated_paths[t] = simulated_paths[t-1] * np.exp((u_GB - 0.5 * sigma**2) * dt + sigma * np.sqrt(dt) * Z)
     
 ###############################
 # (f) 
